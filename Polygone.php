@@ -37,5 +37,5 @@ abstract class Polygone {
         return $res;
     }
 
-    public abstract function CalculerSurface();
+   
 }

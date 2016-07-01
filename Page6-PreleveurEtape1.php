@@ -26,15 +26,13 @@
       </p>
     </form>
 </div>
-<div class="section">
-  <div>
-    <form method="post" action="09-post.php">
-      <h3>Créez une zone :</h3>
-        <input type="text">
-        <input type="submit" value="valider">
-    </form>
-  </div>
+  <div class="section">
+  <h3>Créez une zone</h3>
+    <a href="Page7-InformationZonePrelevement.php"><button type="button" class="btn">Valider</button></a>
+
+  
 </div>
+
 <div class="section">
   <h3>Modifier une zone</h3>
     <form method="post" action="">
@@ -49,6 +47,11 @@
       </p>
     </form>
 </div>
+  
+    
+    
+    
+    
 </div>
 </div>
 </body>
