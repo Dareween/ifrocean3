@@ -1,14 +1,31 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="projetifrocean.css">
+<meta charset="utf-8">
+<title>Page Préleveur Etape 1</title>
+<!--<link rel="stylesheet" type="text/css" href="projetifrocean.css">-->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<title>Page Preleveur Etape 1</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="projetifrocean.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="projetifrocean.css">
 </head>
 <body>
-<div class="bandeau1">Projet Ifrocean</div>
+<div class="container">
+<div class="row">
+<header>
+<div class="bandeau1">Projet Ifrocean - Préleveur</div>
+<ol class="breadcrumb">
+                  <li><a href="Accueil.html">Accueil</a></li>
+                  <li><a href="index.html">Choix de la plage</a></li>
+				</ol>
   <h1 class="bandeau2">Étape 1  : Choix de la plage ou de la zone</h1>
+  </header>
 <div class="section">
   <h3>Choisissez la plage</h3>
     <form method="post" action="">
@@ -45,6 +62,8 @@
         <input type="submit" value="valider" title="valider pour aller à la page sélectionnée"/>
       </p>
     </form>
+</div>
+</div>
 </div>
 </body>
 </html>
