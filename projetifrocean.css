@@ -1,0 +1,62 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+.bandeau1{
+	background-color:#FFA1A3;
+	text-align: center;
+
+}
+
+.bandeau2{
+	background-color:#D45153;
+	text-align: center;
+	color:white;
+
+}
+
+h2{
+	background-color:#CDCDCD;
+}
+
+.section{
+	background-color:#DEDEDE;
+	
+}
+
+.buttonValider{
+	background-color:#D0FCDE;
+}
+
+.buttonModifier{
+	background-color:#FFE0AE;
+}
+
+.buttonSupprimer{
+	background-color:#FFBFC0;
+}
+
+.buttonExporterXls{
+	background-color:#94F1C0;
+}
+
+.buttonEporterKml{
+	background-color:#EBBEF2;
+}
+
+.buttonCloturer{
+	background-color:#FFB9BA;
+}
+
+.buttonContinuerPlusTard{
+	background-color:#DBFFCC;
+}
+
+.buttonEnvoyerData{
+	background-color:#B3DDF3;
+}
+
+.buttonAjouterLigne{
+	background-color:#F5ECC8;
+}
