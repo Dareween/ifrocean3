@@ -12,15 +12,21 @@ $yc=$_POST["longitude-C"];
 $yb=$_POST["latitude-D"];
 $yc=$_POST["longitude-D"];
 
-
-
-$zone = new Zone(
+$tri1 = new Triangle(
         new GPS($xa, $ya),
         new GPS($xb, $yb),
+        new GPS($xc, $yc)
+       );
+
+$tri2 = new Triangle(
         new GPS($xc, $yc),
-        new GPS($xd, $yd));
+        new GPS($xd, $yd),
+        new GPS($xa, $ya)
+       );
+
 
 //Enregistrer en BDD
+$zone=$tri1+$tri2;
 $zone->Inserer();
 
 //renvoie vers une page
