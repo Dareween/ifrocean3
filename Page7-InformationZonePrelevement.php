@@ -44,8 +44,8 @@
                     <label for="latitude-A-seconde" class="col-sm-2
                            form-control-label">latitude-A-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="latitude-A-seconde" id="latitude-A-seconde"
+                        <input type="number" required
+                               step="0.01" name="latitude-A-seconde" id="latitude-A-seconde"
                                class="form-control">
                     </div>
                 </div>
@@ -73,8 +73,8 @@
                     <label for="longitude-A-seconde" class="col-sm-2
                            form-control-label">longitude-A-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="longitude-A-seconde" id="longitude-A-seconde"
+                        <input type="number" required
+                               step="0.01" name="longitude-A-seconde" id="longitude-A-seconde"
                                class="form-control">
                     </div>
                 </div>
@@ -105,8 +105,8 @@
                     <label for="latitude-B-seconde" class="col-sm-2
                            form-control-label">latitude-B-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="latitude-B-seconde" id="latitude-B-seconde"
+                        <input type="number" required
+                               step="0.01"  name="latitude-B-seconde" id="latitude-B-seconde"
                                class="form-control">
                     </div>
                 </div>
@@ -134,8 +134,8 @@
                     <label for="longitude-B-seconde" class="col-sm-2
                            form-control-label">longitude-B-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="longitude-B-seconde" id="longitude-B-seconde"
+                        <input type="number" required
+                               step="0.01"  name="longitude-B-seconde" id="longitude-B-seconde"
                                class="form-control">
                     </div>
                 </div>
@@ -166,8 +166,8 @@
                     <label for="latitude-C-seconde" class="col-sm-2
                            form-control-label">latitude-C-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="latitude-C-seconde" id="latitude-C-seconde"
+                        <input type="number" required
+                               step="0.01"  name="latitude-C-seconde" id="latitude-C-seconde"
                                class="form-control">
                     </div>
                 </div>
@@ -195,8 +195,8 @@
                     <label for="longitude-DC-seconde" class="col-sm-2
                            form-control-label">longitude-C-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="longitude-C-seconde" id="longitude-C-seconde"
+                        <input type="number" required
+                               step="0.01"  name="longitude-C-seconde" id="longitude-C-seconde"
                                class="form-control">
                     </div>
                 </div>
@@ -227,8 +227,8 @@
                     <label for="latitude-D-seconde" class="col-sm-2
                            form-control-label">latitude-D-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="latitude-D-seconde" id="latitude-D-seconde"
+                        <input type="number"required
+                               step="0.01"  name="latitude-D-seconde" id="latitude-D-seconde"
                                class="form-control">
                     </div>
                 </div>
@@ -256,8 +256,8 @@
                     <label for="longitude-D-seconde" class="col-sm-2
                            form-control-label">longitude-D-seconde</label>
                     <div class="col-sm-4">
-                        <input type="number" step="1" required
-                               min="0" max="500" name="longitude-D-seconde" id="longitude-D-seconde"
+                        <input type="number" required
+                               step="0.0001"  name="longitude-D-seconde" id="longitude-D-seconde"
                                class="form-control">
                     </div>
                 </div>

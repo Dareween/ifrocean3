@@ -39,7 +39,7 @@ and open the template in the editor.
         echo "Surface triangle:".$triangle->calculerSurface();
         
               echo "<br>";
-               $triangle2=new Triangle($c, $d, $a);
+        $triangle2=new Triangle($c, $d, $a);
         echo "<br>";
         echo "Surface triangle2:".$triangle2->calculerSurface();
         

@@ -17,11 +17,24 @@ Public License version 3 : http://www.gnu.org/licenses/gpl-3.0.fr.html
         
  class GPS {
 
- 
+   
+    public $degreLat; 
+    public $minuteLat;
+    public $secondeLat;
+    public $degreLong;
+    public $minuteLong;
+    public $secondeLong;
     public $latitudeNumerique;
     public $longitudeNumerique;
 
-    public function __construct($degreLat, $minuteLat, $secondeLat,$degreLong,$minuteLong, $secondeLong) {
+    public function __construct($degreLat, $minuteLat, $secondeLat, $degreLong, $minuteLong, $secondeLong) {
+        
+        $this->degreLat = $degreLat; 
+        $this->minuteLat = $minuteLat;
+        $this->secondeLat = $secondeLat;
+        $this->degreLong = $degreLong;
+        $this->minuteLong = $minuteLong;
+        $this->secondeLong = $secondeLong;
         $this->latitudeNumerique = $degreLat+($minuteLat/60)+($secondeLat/3600);
         $this->longitudeNumerique = $degreLong+($minuteLong/60)+($secondeLong/3600);
     }
@@ -36,5 +49,6 @@ Public License version 3 : http://www.gnu.org/licenses/gpl-3.0.fr.html
         
     }
  }
+ 
  
     

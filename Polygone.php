@@ -6,8 +6,7 @@ include_once 'GPS.php';
 
 /**
  * Représente un polygone dans un repère à 2 dimensions
- *
- * @author Alan
+
  */
 abstract class Polygone {
 

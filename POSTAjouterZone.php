@@ -1,10 +1,11 @@
 <?php
 
 include_once 'Triangle.php';
+include_once 'Zone.php';
 include_once 'GPS.php';
 
 
-$degreLatA = $_POST["latitude-A-degre"];
+$degreLatA = $_POST['latitude-A-degre'];
 $minuteLatA = $_POST["latitude-A-minute"];
 $secondeLatA = $_POST["latitude-A-seconde"];
 $degreLongA = $_POST["longitude-A-degre"];
