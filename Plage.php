@@ -38,5 +38,39 @@ public function Inserer(){
 //fermeture
         $pdo = null;
     }
+ 
+
+// fonction qui renvoie la liste des plages enregistrées dans la db
+public static function listeDesPlages() {
+    //ouverture de la connexion
+        $pdo = new PDO("mysql:host=" . Config::SERVERNAME
+            . ";dbname=" . Config::DBNAME
+            , Config::USERNAME
+            , Config::PASSWORD);
+            $lesPlages = $pdo->prepare("SELECT nomespece FORM espece");
+            return $lesPlages ;
+         }
+
+//funciton qui ajoute une plage dans la base db
+public static function ajoutPlages(){
+	//ouverture de la connexion
+    $pdo = new PDO("mysql:host=" . Config::SERVERNAME
+        . ";dbname=" . Config::DBNAME
+        , Config::USERNAME
+        , Config::PASSWORD);
+	$nompage = $_POST['plage'];
+	$superficie = $_POST['superficie'];
+	$date = $_POST['date'];
+	$ajoutPlage = $pdo->prepare("INSERT INTO PLAGE "."(nomplage,superficie,ville,format(d%,m%,y%) as date_prelevement )"."
+								VALUES ( :nomplage,:superficie,:ville,:date_prelevement)");
+	$ajoutPlage->bindParam(":nomplage",$nompage);
+	$ajoutPlage->bindParam(":superficie",$superficie);
+	$ajoutPlage->bindParam(":ville",$ville);
+	$ajoutPlage->bindParam(":date_prelevement",$date_prelevement);		
+	$ajout->execute();
+	$pdo = null;
+	echo "plage enregistrée";
+
+    }
 
 }
