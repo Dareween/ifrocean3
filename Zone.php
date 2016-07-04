@@ -28,18 +28,22 @@ class Zone extends Polygone {
                     , Config::USERNAME
                     , Config::PASSWORD);
 
-
+                // continuer à mettre à jour la suite
             // pour éviter les injections sql
-            $req = $pdo->prepare("INSERT INTO triangles "
-                    . "(xa,ya,xb,yb,xc,yc,couleur) "
-                    . "values (:xa,:ya,:xb,:yb,:xc,:yc,:couleur)");
-            $req->bindParam(":xa", $this->lesPoints[0]->x);
-            $req->bindParam(":ya", $this->lesPoints[0]->y);
-            $req->bindParam(":xb", $this->lesPoints[1]->x);
-            $req->bindParam(":yb", $this->lesPoints[1]->y);
-            $req->bindParam(":xc", $this->lesPoints[2]->x);
-            $req->bindParam(":yc", $this->lesPoints[2]->y);
-            $req->bindParam(":couleur", $this->couleur);
+            $req = $pdo->prepare("INSERT INTO zone "
+                    . "(latitude-A-degre,latitude-A-minute,latitude-A-seconde,longitude-A-degre,longitude-A-minute,longitude-A-seconde, latitude-B-degre,latitude-B-minute,latitude-B-seconde,longitude-B-degre,longitude-B-minute,longitude-B-seconde ) "
+                    . "values (:latitude-A-degre,:ya,:xb,:yb,:xc,:yc,:couleur)");
+            $req->bindParam(":latitude-A-degre", $this->lesPoints[0]->latitude-A-degre);
+            $req->bindParam(":latitude-A-minute", $this->lesPoints[0]->latitude-A-minute);
+            $req->bindParam(":latitude-A-seconde", $this->lesPoints[0]->latitude-A-seconde);
+            $req->bindParam(":longitude-A-degre", $this->lesPoints[0]->longitude-A-degre);
+            $req->bindParam(":longitude-A-minute", $this->lesPoints[0]->longitude-A-minute);
+            $req->bindParam(":longitude-A-seconde", $this->lesPoints[0]->longitude-A-seconde);
+            
+            
+            
+            
+            
 
             $req->execute();
         } catch (PDOException $e) {
