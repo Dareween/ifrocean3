@@ -32,6 +32,12 @@
                       <input type="number" step="0.01" class="form-control"  id="superficie" placeholder="Entrez une superficie en m2">
                   </div>
               </div>
+                <div class="form-group">
+                   <label for="date" class="col-sm-2 control-label">Date de prelevement </label>
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control" id="date" placeholder="date de prelevement">
+                    </div>
+                </div>
               
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
