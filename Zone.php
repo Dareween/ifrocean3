@@ -1,8 +1,10 @@
 <?php
 
 include_once 'Polygone.php';
+include_once 'Config.php';
 
 class Zone extends Polygone {
+    
 
     public function __construct($p1, $p2, $p3, $p4) {
         $desPoints = array($p1, $p2, $p3, $p4);
@@ -76,18 +78,57 @@ class Zone extends Polygone {
         $pdo = null;
     }
 
-    public static function listeZones() {
+    public static function getAllZones() {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $lesZones = $pdo->prepare("select nomespece, nom_zone, quantite from espece, zone, zone_has_espece where espece.id = zone_has_espece.espece_id AND zone.id = zone_has_espece.zone_id ");
+        /*$req = $pdo->prepare("select nomespece, nom_zone, quantite from espece, zone, zone_has_espece where espece.id = zone_has_espece.espece_id AND zone.id = zone_has_espece.zone_id ");*/
 
-        return $req;
+       $req = $pdo->prepare("select id, latitude-A-degre,latitude-A-minute,latitude-A-seconde,longitude-A-degre,longitude-A-minute,longitude-A-seconde,latitude-B-degre,latitude-B-minute,latitude-B-seconde,longitude-B-degre,longitude-B-minute,longitude-B-seconde, latitude-C-degre,latitude-C-minute,latitude-C-seconde,longitude-C-degre,longitude-C-minute,longitude-C-seconde, latitude-D-degre,latitude-D-minute,latitude-D-seconde,longitude-D-degre,longitude-D-minute,longitude-D-seconde, nom_zone from zone");
+
+        $req->execute();
+
+        if ($req->rowCount() >= 1) {
+            $zones = array();
+
+            while ($ligne = $req->fetch()) {
+                $p1 = new GPS($ligne["latitude-A-degre"], $ligne["latitude-A-minute"], $ligne["latitude-A-seconde"], $ligne["longitude-A-degre"], $ligne["longitude-A-minute"], $ligne["longitude-A-seconde"]);
+                $p2 = new GPS($ligne["latitude-B-degre"], $ligne["latitude-B-minute"], $ligne["latitude-B-seconde"], $ligne["longitude-B-degre"], $ligne["longitude-B-minute"], $ligne["longitude-B-seconde"]);
+                $p3 = new GPS($ligne["latitude-C-degre"], $ligne["latitude-C-minute"], $ligne["latitude-C-seconde"], $ligne["longitude-C-degre"], $ligne["longitude-C-minute"], $ligne["longitude-C-seconde"]);
+                $p4 = new GPS($ligne["latitude-D-degre"], $ligne["latitude-D-minute"], $ligne["latitude-D-seconde"], $ligne["longitude-D-degre"], $ligne["longitude-D-minute"], $ligne["longitude-D-seconde"]); 
+                $zones[] = new Zone($p1, $p2, $p3, $p4);
+            }
+            return $zones;
+        }
        
 
     }
+    
+        public static function getAllTriangles() {
+        $pdo = new PDO("mysql:host=" . Config::SERVERNAME
+                . ";dbname=" . Config::DBNAME
+                , Config::USERNAME
+                , Config::PASSWORD);
+
+        $req = $pdo->prepare("select id, xa, ya, xb, yb, xc, yc, couleur from triangles");
+
+        $req->execute();
+
+        if ($req->rowCount() >= 1) {
+            $triangles = array();
+
+            while ($ligne = $req->fetch()) {
+                $p1 = new Point($ligne["xa"], $ligne["ya"]);
+                $p2 = new Point($ligne["xb"], $ligne["yb"]);
+                $p3 = new Point($ligne["xc"], $ligne["yc"]);
+                $triangles[] = new Triangle($p1, $p2, $p3, $ligne["couleur"], $ligne["id"]);
+            }
+            return $triangles;
+        }
+    }
+    
 
     public static function getById($cle) {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME

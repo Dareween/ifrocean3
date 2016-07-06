@@ -35,12 +35,14 @@ $secondeLongD = $_POST["longitude-D-seconde"];
 
 
 
-$tri1 = new Triangle(
-        new GPS($degreLatA, $minuteLatA, $secondeLatA, $degreLongA, $minuteLongA, $secondeLongA), /*changer le constructeur du point avec les coordonnées Degré minutes, secondes*/
-        new GPS($degreLatB, $minuteLatB, $secondeLatB, $degreLongB, $minuteLongB, $secondeLongB),
-        new GPS($degreLatC, $minuteLatC, $secondeLatC, $degreLongC, $minuteLongC, $secondeLongC)
-       );
+        $GPS1 = new GPS($degreLatA, $minuteLatA, $secondeLatA, $degreLongA, $minuteLongA, $secondeLongA); /*changer le constructeur du point avec les coordonnées Degré minutes, secondes*/
+        $GPS2= new GPS ($degreLatB, $minuteLatB, $secondeLatB, $degreLongB, $minuteLongB, $secondeLongB);
+        $GPS3= new GPS($degreLatC, $minuteLatC, $secondeLatC, $degreLongC, $minuteLongC, $secondeLongC);
 
+$tri1 = new Triangle($GPS1, $GPS2, $GPS3);
+
+
+        
 $tri2 = new Triangle(
          new GPS($degreLatC, $minuteLatC, $secondeLatC, $degreLongC, $minuteLongC, $secondeLongC),
         new GPS($degreLatD, $minuteLatD, $secondeLatD, $degreLongD, $minuteLongD, $secondeLongD),
@@ -53,6 +55,13 @@ $zone = new Zone(
         new GPS($degreLatC, $minuteLatC, $secondeLatC, $degreLongC, $minuteLongC, $secondeLongC),
        new GPS($degreLatD, $minuteLatD, $secondeLatD, $degreLongD, $minuteLongD, $secondeLongD)
         );
+
+
+/*Test création triangle, point polygone, zone*/
+echo ($degreLatA);
+echo ($GPS1->degreLat);
+echo ($tri1->lesPoints[0]->degreLat);
+echo ($zone->lesPoints[0]->degreLat);
 
 
 //Enregistrer en BDD
